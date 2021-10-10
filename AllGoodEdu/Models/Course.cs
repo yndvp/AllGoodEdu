@@ -34,8 +34,11 @@ namespace AllGoodEdu.Models
         [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal Price { get; set; }
 
-        // Reference from parent property
+        // References from parent properties
         public Category Category { get; set; }
         public Instructor Instructor { get; set; }
+
+        // Reference to child property
+        public List<Enrollment> Enrollments { get; set; }
     }
 }
