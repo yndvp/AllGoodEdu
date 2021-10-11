@@ -1,6 +1,6 @@
 # AllGoodEdu - Online Learning Platform
 
-![](img/bookshop-save.png)
+![](AllGoodEdu/AllGoodEdu/wwwroot/img/products/readme.png)
 
 ## Overview
 A platform for teaching and learning in online. User can register as teacher or student. Teachers can open a course and students can register for the course they want. This website has CRUD and authentication functionalities.
