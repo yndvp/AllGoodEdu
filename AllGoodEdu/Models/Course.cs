@@ -18,15 +18,17 @@ namespace AllGoodEdu.Models
 
         [Required()]
         [Range(0, 9999)]
+        [Display(Name = "Category")]
         public int CategoryId { get; set; }
 
         [Required()]
         [Range(0, 9999)]
+        [Display(Name = "Instructor")]
         public int InstructorId { get; set; }
 
         [Required()]
         [MinLength(10)]
-        public string description { get; set; }
+        public string Description { get; set; }
 
         [Required()]
         [Range(minimum: 0.01, maximum: 999)]

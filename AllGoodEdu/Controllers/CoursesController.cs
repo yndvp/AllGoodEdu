@@ -59,7 +59,7 @@ namespace AllGoodEdu.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CourseID,Name,CategoryId,InstructorId,description,Price")] Course course)
+        public async Task<IActionResult> Create([Bind("CourseID,Name,CategoryId,InstructorId,Description,Price")] Course course)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace AllGoodEdu.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CourseID,Name,CategoryId,InstructorId,description,Price")] Course course)
+        public async Task<IActionResult> Edit(int id, [Bind("CourseID,Name,CategoryId,InstructorId,Description,Price")] Course course)
         {
             if (id != course.CourseID)
             {
