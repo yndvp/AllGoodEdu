@@ -18,3 +18,4 @@ A platform for teaching and learning in online. User can register as teacher or 
 - **Take the course**
   Users who want to take the course can register for the course
 
+allgoodedu.database.windows.net
