@@ -7,6 +7,7 @@ namespace AllGoodEdu.Models
 {
     public class Enrollment
     {
+        public int EnrollmentID { get; set; }
         // References from parent properties
         public Course Course { get; set; }
         public Student Student { get; set; }

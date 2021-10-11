@@ -9,8 +9,6 @@ namespace AllGoodEdu.Models
     public class Student
     {
         [Required()]
-        [Range(0, 9999)]
-        [Display(Name = "Student ID")]
         public int StudentID { get; set; }
 
         [Required()]

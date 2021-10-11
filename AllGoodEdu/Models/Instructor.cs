@@ -9,8 +9,6 @@ namespace AllGoodEdu.Models
     public class Instructor
     {
         [Required()]
-        [Range(0, 9999)]
-        [Display(Name = "Instructor ID")]
         public int InstructorID { get; set; }
 
         [Required()]
