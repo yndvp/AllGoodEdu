@@ -6,7 +6,13 @@ A platform for teaching and learning in online. User can register as teacher or 
 ## Technologies
 - C#.NET Core
 - MSSQL
-- Azure for saving data and deploying website
+- Azure for deploying website and database
 
 ## Features
-- **Adding book data**
+- **Sign up/Login**
+  Users can sign up or login for having their own account. The authentication process will be executed during validating the info
+- **Open a course**
+  Users who want to teach can open a course freely. They also can edit/delete/update the course
+- **Take the course**
+  Users who want to take the course can register for the course
+
