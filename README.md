@@ -19,4 +19,4 @@ A platform for teaching and learning in online. User can register as teacher or 
   Users who want to take the course can register for the course
 
 ## Website Link
-allgoodedu.database.windows.net
+https://allgoodedu.azurewebsites.net/
