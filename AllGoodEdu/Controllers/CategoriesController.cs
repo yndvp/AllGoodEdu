@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AllGoodEdu.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize]
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,13 +21,13 @@ namespace AllGoodEdu.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
         // GET: Categories
         public async Task<IActionResult> Index()
         {
             return View(await _context.Categories.ToListAsync());
         }
 
-        [AllowAnonymous]
         // GET: Categories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
