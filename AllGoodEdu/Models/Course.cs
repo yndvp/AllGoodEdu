@@ -38,8 +38,5 @@ namespace AllGoodEdu.Models
         // References from parent properties
         public Category Category { get; set; }
         public Instructor Instructor { get; set; }
-
-        // Reference to child property
-        public List<Enrollment> Enrollments { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace AllGoodEdu.Models
         [Display(Name = "Category Id")] 
         public int CategoryId { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "And no darn empty strings!")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "No empty strings")]
         [MaxLength(100)]
         public string Name { get; set; }
 

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AllGoodEdu.Models.Course>
+
+@{ ViewData["Title"] = "Shop our Courses";}
+
+<h1>Courses for @ViewBag.Category</h1>
+
+<section class="row card-group">
+    @foreach (var c in Model)
+    {
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-3 text-center h-100">
+                <div class="card-body">
+                    <h5>@c.Name</h5>
+                    <h6 class="instructor">@c.Instructor.Name</h6>
+                    <p>@c.Description</p>
+                    <h6>@String.Format("{0:c}", c.Price)</h6>
+                    <form method="post" action="/Learnings/AddToCart">
+                        <input type="hidden" name="CourseID" value="@c.CourseID" />
+                        <button class="btn btn-primary">Add To Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</section>

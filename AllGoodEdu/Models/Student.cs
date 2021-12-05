@@ -19,8 +19,6 @@ namespace AllGoodEdu.Models
 
         public string Password { get; set; }
 
-        // References to child property
-        public List<Enrollment> Enrollments { get; set; }
 
     }
 }
