@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AllGoodEdu.Controllers
 {
-    [Authorize]
     public class CoursesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,7 +20,6 @@ namespace AllGoodEdu.Controllers
             _context = context;
         }
 
-        [AllowAnonymous]
         // GET: Courses
         public async Task<IActionResult> Index()
         {
@@ -135,7 +133,7 @@ namespace AllGoodEdu.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             var course = await _context.Courses
@@ -144,10 +142,10 @@ namespace AllGoodEdu.Controllers
                 .FirstOrDefaultAsync(m => m.CourseID == id);
             if (course == null)
             {
-                return NotFound();
+                return View("404");
             }
 
-            return View(course);
+            return View("Delete", course);
         }
 
         // POST: Courses/Delete/5

@@ -1,6 +1,7 @@
 ﻿using AllGoodEdu.Controllers;
 using AllGoodEdu.Data;
 using AllGoodEdu.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 namespace AllGoodEduTests
 {
     [TestClass]
-    class CoursesControllerTest
+    class CoursesControllerTests
     {
         private ApplicationDbContext _context;
         CoursesController controller;
@@ -80,6 +81,46 @@ namespace AllGoodEduTests
 
             // instantiate controller w/db dependency
             controller = new CoursesController(_context);
+        }
+
+        [TestMethod]
+        public void DeleteNullIdLoads404()
+        {
+            // act
+            var result = (ViewResult)controller.Delete(null).Result;
+
+            // assert
+            Assert.AreEqual("404", result.ViewName);
+        }
+
+        [TestMethod]
+        public void DeleteInvalidIdLoads404()
+        {
+            // act
+            var result = (ViewResult)controller.Delete(500).Result;
+
+            // assert
+            Assert.AreEqual("404", result.ViewName);
+        }
+
+        [TestMethod]
+        public void DeleteValidIdLoadsCourse()
+        {
+            // act
+            var result = (ViewResult)controller.Delete(632).Result;
+
+            // assert
+            Assert.AreEqual(courses[1], result.Model);
+        }
+
+        [TestMethod]
+        public void DeleteValidIdLoadsView()
+        {
+            // act
+            var result = (ViewResult)controller.Delete(632).Result;
+
+            // assert
+            Assert.AreEqual("Delete", result.ViewName);
         }
     }
 }
